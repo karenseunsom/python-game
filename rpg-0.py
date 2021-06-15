@@ -51,7 +51,7 @@ What special would you like, {user_hero}?
         if user_input == '1':
             hero.attack(goblin)
             if goblin.health <= 0:
-                print("The goblin is dead.")
+                print("\nThe goblin is dead.")
                 # exit()
                 break
         elif user_input == '2':
@@ -60,7 +60,8 @@ What special would you like, {user_hero}?
             print(f"You escaped goblin.")
             break
         else:
-            print(f"Invalid input: {user_input}")
+            print(f"""INVALID INPUT! '{user_input}'
+Goblin attacks anyways.""")
         if goblin.is_alive:
             goblin.attack(hero)
             if hero.health <= 0:
@@ -90,23 +91,30 @@ What special would you like, {user_hero}?
                 print("It was super effective!")
             if mamagoblin.health <= 0:
                 print('Mama Goblin is ded')
-                exit()
+                break
         elif user_input_2 == 2 and special == 3:
             cuddlypet.attack(mamagoblin)
             if mamagoblin.health <= 0:
-                print("""OVERKILL! Cuddly Pet is OP and needs a nerf!
+                print("""OVERKILL! Cuddly Pet needs a nerf!
 Mama Goblin was demolished.""")
-                exit()                
-        if user_input_2 == 2 and special != 3:
+                break               
+        elif user_input_2 == 2 and special != 3:
             print("You do not have Cuddly Pet in your inventory.")
         elif user_input_2 == 3:
             mamagoblin.attack(hero)
             print("Hug attempt not very effective.")
+        else: print(f"""INVLID INPUT: {user_input_2} !
+Mama Goblin attacks anyways.""")
         if mamagoblin.is_alive and user_input_2 != 3:
             mamagoblin.attack(hero)
             if hero.health <= 0:
                 print("You are dead.")
                 exit()
+    
+
+
+
+
     
         
 
