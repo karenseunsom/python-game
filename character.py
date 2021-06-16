@@ -1,8 +1,9 @@
 class Character:
-    def __init__(self, name, health=100, power=5):
+    def __init__(self, name, health=100, power=5, money=0):
         self.name = name
         self.health = health
         self.power = power
+        self.money = float(money)
 
     def attack(self, other_person):
         other_person.health -= self.power
